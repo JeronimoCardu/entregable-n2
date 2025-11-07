@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const PORT = process.env.URL_API;
+const PORT = 3000;
 const handlebars = require("express-handlebars");
 const productsRouter = require("./src/routes/productsRouter");
 const viewsRouter = require("./src/routes/views.router");
