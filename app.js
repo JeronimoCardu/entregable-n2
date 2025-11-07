@@ -1,5 +1,6 @@
 const express = require("express");
-const PORT = process.env.PORT || 3000;
+require("dotenv").config();
+const PORT = process.env.URL_API;
 const handlebars = require("express-handlebars");
 const productsRouter = require("./src/routes/productsRouter");
 const viewsRouter = require("./src/routes/views.router");
@@ -28,5 +29,4 @@ app.use("/api/products", productsRouter); // Uso de la API
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log(`Access the application at http://localhost:${PORT}`);
 });
