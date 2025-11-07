@@ -19,7 +19,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const file = "./products.json";
+const file = __dirname + "/../../products.json";
+console.log(file)
 
 router.get("/", async (req, res) => {
   try {
