@@ -1,0 +1,29 @@
+<section class="home">
+  <h2>Bienvenido al trabajo N°2 del curso de</h2>
+
+  <img src="/assets/coderhouse-logo.png" alt="Coderhouse logo" class="logo" />
+
+  <p>Haz clic en
+    <strong>“Productos”</strong>
+    en la parte superior para administrar la lista de productos</p>
+</section>
+
+<section class="cards-container">
+  {{#each products}}
+    <div class="product-card" key="{{this.id}}">
+      {{#if this.image}}
+        <img src="{{this.image}}" alt="{{this.title}}" class="product-image" />
+      {{else}}
+        <img
+          src="../assets/no-img.webp"
+          alt="{{this.title}}"
+          class="product-image"
+        />
+      {{/if}}
+      <h3 class="product-title">{{this.title}}</h3>
+      <p class="product-price">Precio: ${{this.price}}</p>
+      <p class="product-stock">Stock: {{this.stock}}</p>
+      <p class="product-category">Categoría: {{this.category}}</p>
+    </div>
+  {{/each}}
+</section>

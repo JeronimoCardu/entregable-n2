@@ -1,0 +1,110 @@
+<h1 class="title">Lista de productos</h1>
+<main>
+  <aside>
+    <h2>Crear producto</h2>
+    <form id='formProduct' action="/api/products" enctype="multipart/form-data" method="POST">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="price">Precio:</label>
+      <input type="number" id="price" name="price" required />
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required />
+      <label for="category">Categoría:</label>
+      <input type="text" id="category" name="category" required />
+      <label for="image">Imagen:</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+      <button type="submit">Agregar producto</button>
+    </form>
+  </aside>
+  <section class='table-container'>
+    <table>
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Título</th>
+          <th style="padding-left: 0;">Precio</th>
+          <th style="padding-left: 0;">Stock</th>
+          <th style="padding-left: 0;">Categoría</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+          <tr key="{{this.id}}">
+            <td>
+              {{#if this.image}}
+                <img src="{{this.image}}" alt="{{this.title}}" />
+              {{else}}
+                <img src="../assets/no-img.webp" alt="{{this.title}}" />
+              {{/if}}
+            </td>
+
+            <td>{{this.title}}</td>
+            <td>${{this.price}}</td>
+            <td>{{this.stock}}</td>
+            <td>{{this.category}}</td>
+            <td><button data-id="{{this.id}}" class="delete">
+                <img src="../assets/trash.png" alt="Eliminar" />
+              </button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/deleteProduct.js"></script>
+<script>
+
+  const formProduct = document.getElementById("formProduct");
+  formProduct.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(formProduct);
+    try {
+      const response = await fetch("/api/products", {
+        method: "POST",
+        body: formData,
+      });
+      if (response.ok) {
+        formProduct.reset();
+      } else {
+        console.error("Error al agregar el producto");
+      }
+    } catch (error) {
+      console.error("Error al agregar el producto:", error);
+    }
+  })
+  const socket = io();
+
+  socket.on("productAdded", (newProduct) => {
+    const tbody = document.querySelector("tbody");
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-id", newProduct.id);
+    tr.innerHTML = `
+      <td>
+        ${
+          newProduct.image
+            ? `<img src="${newProduct.image}" alt="${newProduct.title}" />`
+            : `<img src="../assets/no-img.webp" alt="${newProduct.title}" />`
+        }
+      </td>
+      <td>${newProduct.title}</td>
+      <td>$${newProduct.price}</td>
+      <td>${newProduct.stock}</td>
+      <td>${newProduct.category}</td>
+      <td><button data-id="${newProduct.id}" class="delete">
+          <img src="../assets/trash.png" alt="Eliminar" />
+        </button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  socket.on("productDeleted", (deletedProductId) => {
+    const rowToDelete = document.querySelector(`tr[key='${deletedProductId}']`);
+    if (rowToDelete) {
+      rowToDelete.remove();
+    }
+  });
+</script>
