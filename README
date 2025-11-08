@@ -1,0 +1,62 @@
+# Proyecto N°2
+
+**Estudiante:** Jeronimo Cardu
+
+**Despliegue:** [Render](https://entregable-n2-jeronimo-cardu.onrender.com/)
+
+---
+
+## Descripción
+
+Este proyecto tiene como finalidad demostrar el uso de **Express**, **Handlebars** y **Socket.io** para la gestión de productos en tiempo real.  
+Incluye funcionalidades para **crear**, **listar** y **eliminar productos**, además de la **subida de imágenes** mediante **Multer**.
+
+---
+
+## Dependencias utilizadas
+
+- **dotenv**
+- **express**
+- **express-handlebars**
+- **multer**
+- **socket.io**
+
+---
+
+## Iniciar el proyecto localmente
+
+1. Instalar las dependencias:
+```bash
+npm install
+```
+2. Ejecutar el servidor de forma local:
+
+```bash
+  node app.js
+```
+
+## Estructura del proyecto
+.
+├── public/
+│   ├── assets/        # Imágenes utilizadas en el proyecto
+│   ├── css/           # Archivo styles.css con los estilos principales
+│   ├── js/            # Script con el addEventListener para eliminar productos
+│   └── uploads/       # Imágenes subidas desde el formulario (Multer)
+│
+├── src/
+│   ├── routes/        # Rutas HTTP y rutas para las vistas
+│   ├── utils/         # Funciones para leer y escribir el archivo products.json
+│   └── views/         # Vistas del proyecto junto a su layout principal
+│
+└── app.js             # Archivo principal: configuración de dependencias, rutas y socket.io
+
+## Rutas principales
+
+- / → home.handlebars
+Página de inicio con la lista de productos cargados mediante HTTP.
+
+- /product/:id → product.handlebars
+Página de detalle que muestra información de un producto específico.
+
+- /realtimeproducts → realtimeproducts.handlebars
+Panel en tiempo real donde se pueden ver, crear y eliminar productos con Socket.io.
