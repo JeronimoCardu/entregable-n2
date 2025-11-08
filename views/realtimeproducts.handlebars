@@ -102,7 +102,7 @@
   });
 
   socket.on("productDeleted", (deletedProductId) => {
-    const rowToDelete = document.querySelector(`tr[key='${deletedProductId}']`);
+    const rowToDelete = document.querySelector(`tr[data-id='${deletedProductId}']`);
     if (rowToDelete) {
       rowToDelete.remove();
     }
