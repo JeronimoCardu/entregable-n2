@@ -1,10 +1,10 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
+/* 🔧 FIX: evita doble scroll */
 
 body {
   background-color: #f4f6f8;
@@ -12,7 +12,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-
 }
 
 /* HEADER */
@@ -65,6 +64,15 @@ aside h2 {
 }
 
 /* INDEX */
+.title {
+  height: fit-content;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -151,12 +159,10 @@ aside h2 {
   font-size: 0.9rem;
 }
 
-
-
 /* FOMRULARIO */
-aside{
-    height: fit-content;
-    position: sticky;
+aside {
+  height: fit-content;
+  position: sticky;
 }
 form {
   display: flex;
@@ -208,10 +214,9 @@ form button:hover {
 
 section {
   flex: 1;
-  overflow-x: auto;
 }
 
-.table-container{
+.table-container {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -226,7 +231,6 @@ table {
   overflow: hidden;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 thead {
   display: table;
@@ -292,7 +296,8 @@ tbody tr button img {
 
 tbody tr button img:hover {
   transform: translateY(-50%) scale(1.15);
-  filter: brightness(0) saturate(100%) invert(17%) sepia(99%) saturate(7356%) hue-rotate(358deg) brightness(97%) contrast(104%);
+  filter: brightness(0) saturate(100%) invert(17%) sepia(99%) saturate(7356%)
+    hue-rotate(358deg) brightness(97%) contrast(104%);
 }
 
 /* FOOTER */
@@ -378,21 +383,20 @@ footer {
   }
 }
 
-
 /* MEDIA QUERYS */
 @media (max-width: 900px) {
-  body{
+  body {
     margin: 0;
     width: 100%;
+    overflow: scroll;
   }
   main {
     grid-template-columns: 1fr;
     width: 100%;
-    overflow: hidden;
     padding: 0;
   }
 
-  aside{
+  aside {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
