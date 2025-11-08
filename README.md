@@ -37,26 +37,38 @@ npm install
 
 ## Estructura del proyecto
 .
-├── public/
-│   ├── assets/        # Imágenes utilizadas en el proyecto
-│   ├── css/           # Archivo styles.css con los estilos principales
-│   ├── js/            # Script con el addEventListener para eliminar productos
-│   └── uploads/       # Imágenes subidas desde el formulario (Multer)
+├── **public/**
+
+│   ├── **assets/**        *Imágenes utilizadas en el proyecto*
+
+│   ├── **css/**           *Archivo styles.css con los estilos principales*
+
+│   ├── **js/**            *Script con el addEventListener para eliminar productos*
+
+│   └── **uploads/**       *Imágenes subidas desde el formulario (Multer)*
 │
-├── src/
-│   ├── routes/        # Rutas HTTP y rutas para las vistas
-│   ├── utils/         # Funciones para leer y escribir el archivo products.json
-│   └── views/         # Vistas del proyecto junto a su layout principal
-│
-└── app.js             # Archivo principal: configuración de dependencias, rutas y socket.io
+
+├── **src/**
+
+│   ├── **routes/**        *Rutas HTTP y rutas para las vistas*
+
+│   ├── **utils/**         *Funciones para leer y escribir el archivo products.json*
+
+│   └── **views/**         *Vistas del proyecto junto a su layout principal*
+
+└── **app.js**             *Archivo principal: configuración de dependencias, rutas y socket.io*
+
 
 ## Rutas principales
 
-- / → home.handlebars
+***- / → home.handlebars***
+  
 Página de inicio con la lista de productos cargados mediante HTTP.
 
-- /product/:id → product.handlebars
+***- /product/:id → product.handlebars***
+  
 Página de detalle que muestra información de un producto específico.
 
-- /realtimeproducts → realtimeproducts.handlebars
+***- /realtimeproducts → realtimeproducts.handlebars***
+  
 Panel en tiempo real donde se pueden ver, crear y eliminar productos con Socket.io.
