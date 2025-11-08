@@ -4,7 +4,7 @@
     "price": "129999",
     "stock": "11",
     "category": "oficina",
-    "image": "./uploads/escritorio.jpeg",
+    "image": "/uploads/escritorio.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000001"
   },
   {
@@ -12,7 +12,7 @@
     "price": "45999",
     "stock": "20",
     "category": "oficina",
-    "image": "./uploads/silla-ergonomica.jpeg",
+    "image": "/uploads/silla-ergonomica.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000002"
   },
   {
@@ -20,7 +20,7 @@
     "price": "7999",
     "stock": "35",
     "category": "iluminación",
-    "image": "./uploads/lampara-mesita-de-luz.jpeg",
+    "image": "/uploads/lampara-mesita-de-luz.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000003"
   },
   {
@@ -28,7 +28,7 @@
     "price": "189999",
     "stock": "5",
     "category": "hogar",
-    "image": "./uploads/mesa-comedor.jpeg",
+    "image": "/uploads/mesa-comedor.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000004"
   },
   {
@@ -36,7 +36,7 @@
     "price": "249999",
     "stock": "3",
     "category": "hogar",
-    "image": "./uploads/sillon-tres-cuerpos.jpeg",
+    "image": "/uploads/sillon-tres-cuerpos.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000005"
   },
   {
@@ -44,7 +44,7 @@
     "price": "79999",
     "stock": "12",
     "category": "hogar",
-    "image": "./uploads/estanteria-madera.jpeg",
+    "image": "/uploads/estanteria-madera.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000006"
   },
   {
@@ -52,7 +52,7 @@
     "price": "19999",
     "stock": "50",
     "category": "tecnología",
-    "image": "./uploads/auriculares.jpeg",
+    "image": "/uploads/auriculares.jpeg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000007"
   },
   {
@@ -60,7 +60,7 @@
     "price": "14999",
     "stock": "40",
     "category": "tecnología",
-    "image": "./uploads/teclado-rgb.jpg",
+    "image": "/uploads/teclado-rgb.jpg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000008"
   },
   {
@@ -68,7 +68,7 @@
     "price": "7999",
     "stock": "45",
     "category": "tecnología",
-    "image": "./uploads/mouse-gamer.jpg",
+    "image": "/uploads/mouse-gamer.jpg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000009"
   },
   {
@@ -76,7 +76,15 @@
     "price": "11999",
     "stock": "15",
     "category": "iluminación",
-    "image": "./uploads/lampara-moderna.jpg",
+    "image": "/uploads/lampara-moderna.jpg",
     "id": "1a0b7e31-14f3-49d3-b1e7-000000000010"
+  },
+  {
+    "title": "dsa",
+    "price": "132",
+    "stock": "321",
+    "category": "312",
+    "image": "/uploads/1762572858605-el-fronton-logo.png",
+    "id": "c16ee112-3e31-4ca4-a819-cb9530ce209a"
   }
 ]

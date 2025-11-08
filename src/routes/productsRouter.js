@@ -31,6 +31,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const products = await readProductsFile(file);
+    const product = products.find((p) => p.id === productId);
+    if (!product) return res.status(404).send("Product not found");
+    res.json(product);
+  } catch (error) {
+    res.status(500).send("Error loading product");
+  }
+});
+
 router.post("/", upload.single("image"), async (req, res) => {
   const image = req.file ? req.file.filename : null;
   try {

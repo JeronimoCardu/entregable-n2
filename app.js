@@ -14,6 +14,7 @@ const io = new Server(server);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use("/uploads", express.static("public/uploads"));
 
 // Configuración de Handlebars
 app.engine("handlebars", handlebars.engine());

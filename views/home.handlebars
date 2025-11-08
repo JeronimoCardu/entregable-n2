@@ -27,3 +27,14 @@
     </div>
   {{/each}}
 </section>
+
+<script>
+  const cardsContainer = document.querySelector('.cards-container');
+  cardsContainer.addEventListener('click', (event) => {
+    const card = event.target.closest('.product-card');
+    if (card) {
+      const productId = card.getAttribute('key');
+      window.location.href = `/product/${productId}`;
+    }
+  });
+</script>
